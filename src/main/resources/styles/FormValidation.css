@@ -1,0 +1,31 @@
+.form-validation {
+    -fx-spacing: 4;
+    -fx-padding: 4;
+}
+
+.form-validation.error {
+    -fx-border-radius: 4;
+    -fx-border-color: #d44;
+    -fx-border-width: 2;
+}
+
+.form-validation .fields {
+    -fx-spacing: 4;
+}
+
+.form-validation .top {
+    -fx-spacing: 4;
+}
+
+.form-validation .error-messages {
+    -fx-spacing: 2;
+}
+
+.form-validation .error-messages .error-message {
+    -fx-background-color: #d44;
+    -fx-background-radius: 4;
+    -fx-padding: 2;
+}
+.form-validation .error-messages .error-message .error-message-text {
+    -fx-fill: #fff;
+}

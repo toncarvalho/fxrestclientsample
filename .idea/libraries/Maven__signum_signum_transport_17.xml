@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: signum:signum-transport:17">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/signum/signum-transport/17/signum-transport-17.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/signum/signum-transport/17/signum-transport-17-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/signum/signum-transport/17/signum-transport-17-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

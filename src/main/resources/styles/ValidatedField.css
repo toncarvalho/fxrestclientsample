@@ -1,0 +1,144 @@
+.validated-text-field {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 4px;
+}
+.validated-text-field .text-field {
+    -fx-background-color: #000, #fff;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 0, 0;
+}
+.validated-text-field .text-field:focused {
+    -fx-background-color: #000, #ccc;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 0, 0;
+}
+.validated-text-field .text {
+}
+.validated-text-field.error {
+    -fx-background-color: #fcc;
+}
+
+.validated-checkbox-field {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 4px;
+}
+.validated-checkbox-field .check-box .box {
+    -fx-background-color: #000, #fff;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 0, 0;
+}
+.validated-checkbox-field .check-box:focused .box {
+    -fx-background-color: #000, #ccc;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 0, 0;
+}
+.validated-checkbox-field.error {
+    -fx-background-color: #fcc;
+}
+
+.validated-foreignkey-field {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 4;
+}
+.validated-foreignkey-field.error {
+    -fx-background-color: #fcc;
+}
+.validated-foreignkey-field .fieldBox {
+    -fx-spacing: 4;
+}
+.validated-foreignkey-field .selectedLabel {
+    -fx-background-color: #fff;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-color: #000;
+    -fx-border-width: 1;
+    -fx-padding: 4;
+    -fx-opacity: 1.0;
+    -fx-text-fill: #000;
+}
+.validated-foreignkey-field .searchButton {
+    -fx-background-color: #333;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-graphic: url("/icons/dots.png");
+}
+.validated-foreignkey-field .searchButton:hover {
+    -fx-background-color: #444;
+    -fx-graphic: url("/icons/dotsOver.png");
+}
+.validated-foreignkey-field-searchbox {
+    -fx-border-color: #000;
+    -fx-border-width: 1;
+}
+.validated-foreignkey-field-searchbox .searchField {
+    -fx-background-color: #fff;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 4;
+}
+.validated-foreignkey-field-searchbox .searchMoreResults {
+    -fx-background-color: #bb6;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 4;
+    -fx-text-fill: #fff;
+}
+.validated-foreignkey-field-searchbox .result {
+    -fx-background-color: #ddd;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+.validated-foreignkey-field-searchbox .result.even {
+    -fx-background-color: #ccc;
+}
+.validated-foreignkey-field-searchbox .result:hover {
+    -fx-text-fill: darkgoldenrod;
+    -fx-background-color: #bbb;
+}
+.validated-foreignkey-field-searchbox .result.even:hover {
+    -fx-text-fill: darkgoldenrod;
+    -fx-background-color: #bbb;
+}
+.validated-foreignkey-field-searchbox .result.selected {
+    -fx-background-color: #bbb;
+    -fx-text-fill: darkgoldenrod;
+}
+
+.validated-choice-field {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 4;
+    -fx-spacing: 4;
+}
+.validated-choice-field.error {
+    -fx-background-color: #fcc;
+}
+
+.validated-time-field {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 4px;
+}
+.validated-time-field .text-field {
+    -fx-background-color: #000, #fff;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 0, 0;
+    -fx-font-family: monospaced;
+}
+.validated-time-field .text-field:focused {
+    -fx-background-color: #000, #ccc;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 0, 0;
+}
+.validated-time-field.error {
+    -fx-background-color: #fcc;
+}
+

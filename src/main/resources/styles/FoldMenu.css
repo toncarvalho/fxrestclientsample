@@ -1,0 +1,148 @@
+.foldmenu {
+    -fx-background-color: #1b1e24;
+}
+
+.foldmenu-header {
+    -fx-font-size: 12px;
+    -fx-background-color: #1b1e24;
+    -fx-padding: 6px 16px 6px 6px;
+    -fx-cursor: hand;
+}
+.foldmenu-header > .label {
+    -fx-text-fill: #eee;
+}
+.foldmenu-header:hover {
+    -fx-background-color: #1f2229;
+}
+.foldmenu-header:hover > .label {
+    -fx-text-fill: #ff6600;
+}
+
+.foldmenu-item {
+    -fx-font-size: 12px;
+    -fx-background-color: #1b1e24;
+    -fx-padding: 6px 16px 6px 6px;
+    -fx-cursor: hand;
+}
+.foldmenu-item > .label {
+    -fx-text-fill: #eee;
+}
+.foldmenu-item:hover {
+    -fx-background-color: #1f2229;
+}
+.foldmenu-item:hover > .label {
+    -fx-text-fill: #ff6600;
+}
+
+.foldmenu-submenu .foldmenu-item {
+    -fx-font-size: 10px;
+    -fx-font-weight: normal;
+    -fx-background-color: #22262e;
+    -fx-padding: 6px 16px 6px 6px;
+    -fx-cursor: hand;
+}
+.foldmenu-submenu .foldmenu-item > .label {
+    -fx-text-fill: #eee;
+}
+.foldmenu-submenu .foldmenu-item:hover {
+    -fx-background-color: #262a33;
+}
+.foldmenu-submenu .foldmenu-item:hover > .label {
+    -fx-text-fill: #ff6600;
+}
+
+.foldmenu-header-disabled {
+    -fx-font-size: 12px;
+    -fx-background-color: #1b1e24;
+    -fx-padding: 6px 16px 6px 6px;
+    -fx-cursor: default;
+}
+.foldmenu-header-disabled > .label {
+    -fx-text-fill: #eee;
+}
+
+.main-menu-search {
+    -fx-border-color: #1b1e24;
+    -fx-border-width: 5px;
+    -fx-border-insets: 0;
+    -fx-border-radius: 0;
+
+    -fx-background-color: #999, #1b1e24;
+    -fx-background-insets: 0, 6px;
+    -fx-background-radius: 0, 0;
+    -fx-background-image: url("/icons/MenuSearch.png");
+    -fx-background-size: 24px 20px;
+    -fx-background-position: right center;
+    -fx-background-repeat: no-repeat;
+
+    -fx-padding: 4px 20px 4px 4px;
+
+    -fx-font-size: 12px;
+    -fx-text-fill: #fff;
+    -fx-highlight-fill: transparent;
+    -fx-highlight-text-fill: #fff;
+}
+.main-menu-search:focused {
+    -fx-background-color: #ff6600, #1b1e24;
+}
+
+.main-menu-scroll {
+    -fx-font-size: 6;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-bar{
+    -fx-background-color: #1b1e24;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track {
+    -fx-border-color: #1b1e24;
+    -fx-background-color: #1b1e24;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+.scroll-bar:vertical .track-background,
+.scroll-bar:horizontal .track-background {
+    -fx-background-color: #1b1e24;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #1b1e24, #fff;
+    -fx-background-insets: 0, 0 2 0 2;
+    -fx-background-radius: 0, 0 0 0 0;
+}
+.scroll-bar:horizontal .thumb:hover,
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #1b1e24, #ff6600;
+}
+.scroll-bar:horizontal .thumb:pressed,
+.scroll-bar:vertical .thumb:pressed {
+    -fx-background-color: #1b1e24, #ff6600;
+}
+.scroll-bar:horizontal .increment-button,
+.scroll-bar:horizontal .decrement-button,
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button {
+    visibility: hidden;
+}
+.scroll-bar:horizontal .increment-arrow,
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:horizontal .decrement-arrow,
+.scroll-bar:vertical .decrement-arrow {
+    visibility: hidden;
+}
+.scroll-bar:vertical:focused,
+.scroll-bar:horizontal:focused {
+    -fx-background-color: #1b1e24;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}

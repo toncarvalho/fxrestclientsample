@@ -1,0 +1,19 @@
+.logo-pane {
+    -fx-background-color: #fff;
+    -fx-alignment: center-left;
+}
+.logo {
+    -fx-background-color: #22262e;
+}
+
+.main-menu-toggle {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0 0 0 0;
+    -fx-border-insets: 0;
+    -fx-border-radius: 0 0 0 0;
+    -fx-padding: 8px 8px 8px 8px;
+    -fx-text-fill: #000;
+    -fx-alignment: center;
+    -fx-cursor: hand;
+}
