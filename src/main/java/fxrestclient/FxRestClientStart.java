@@ -2,6 +2,9 @@ package fxrestclient;
 
 import javax.ws.rs.ProcessingException;
 import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import fxrestclient.components.RESTConnection;
 import fxrestclient.components.RESTSessionManager;
@@ -29,7 +32,10 @@ public class FxRestClientStart extends Application {
         stage.setMinHeight(700);
         stage.setMaximized(true);
         stage.setTitle("Rest  Sample");
-        //stage.setScene(new MainScreen());
+
+        VBox box = new VBox();
+        box.getChildren().add(new Text("Exemplo de conexao com servidor REST"));
+        stage.setScene(new Scene(box));
         stage.show();
     }
 }
