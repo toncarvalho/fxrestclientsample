@@ -1,17 +1,17 @@
-package fxrestclient.components;
+package fxrestclient.gui.components;
 
 import java.util.List;
 import java.util.Map;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-public class RESTException extends RuntimeException {
+public class ServiceException extends RuntimeException {
     private static final long serialVersionUID = 1L;
 
     private final int status;
     private final Map<String, List<String>> errorData;
 
-    public RESTException(int status, Map<String, List<String>> errorData) {
+    public ServiceException(int status, Map<String, List<String>> errorData) {
         this.status = status;
         this.errorData = errorData;
     }

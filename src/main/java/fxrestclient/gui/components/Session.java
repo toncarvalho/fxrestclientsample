@@ -1,4 +1,4 @@
-package fxrestclient.components;
+package fxrestclient.gui.components;
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,10 +13,11 @@ import com.google.gson.Gson;
 /**
  * Classe que mantem a conexão com o servidor
  */
-public class RESTSession {
+public class Session {
 
     private final WebTarget target;
     private final Gson gson;
+    private String retorno;
 
     /**
      * Mantém uma sessão com o servidor e permite a execução de requisições REST realizando serialização/deserialização automaticamente.
@@ -24,12 +25,47 @@ public class RESTSession {
      * @param target WebTarget configurado para conectar no servidor
      * @param gson   Instância configurada do Gson
      */
-    public RESTSession(WebTarget target, Gson gson) {
+    public Session(WebTarget target, Gson gson) {
         this.target = target;
         this.gson = gson;
     }
 
     private String getRaw(String path, Map<String, String> queryParams) {
+
+      /*  GetInvoker getInvoker = new GetInvoker(target, gson, path, queryParams);
+
+        if (!getInvoker.getState().equals(Worker.State.READY)) {
+            getInvoker.restart();
+        }
+
+        getInvoker.setOnCancelled(cancelAction -> {
+            System.out.println(" servico cancelado");
+        });
+
+        getInvoker.setOnFailed(failAction -> {
+            System.out.println(" Falha na invocação do serviço");
+        });
+
+        getInvoker.setOnReady(readyAction -> {
+            System.out.println(" Serviço pronto");
+        });
+
+        getInvoker.setOnRunning(runningAction -> {
+            System.out.println(" Serviço RODANDO");
+        });
+
+        getInvoker.setOnScheduled(schedullAction -> {
+            System.out.println(" serviço agendado");
+        });
+
+        getInvoker.setOnSucceeded(action -> {
+            System.out.println(action.getSource().getValue());
+
+            retorno = action.getSource().getValue().toString();
+        });
+
+        return retorno;*/
+
         WebTarget webTarget = target.path(path);
         for (String k : queryParams.keySet()) {
             webTarget = webTarget.queryParam(k, queryParams.get(k));
@@ -38,12 +74,14 @@ public class RESTSession {
         int status = response.getStatus();
         String entity = response.readEntity(String.class);
 
+        System.out.println(" dados do servidor: " +entity);
+
         if (status == Response.Status.OK.getStatusCode()) {
             return entity;
         } else {
             Map<String, List<String>> errorData = gson.fromJson(entity, new GenericType<Map<String, List<String>>>() {
             }.getType());
-            throw new RESTException(status, errorData);
+            throw new ServiceException(status, errorData);
         }
     }
 
@@ -72,7 +110,7 @@ public class RESTSession {
             return entity;
         } else {
             Map<String, List<String>> errorData = gson.fromJson(entity, new GenericType<Map<String, List<String>>>() {}.getType());
-            throw new RESTException(status, errorData);
+            throw new ServiceException(status, errorData);
         }
     }
 
@@ -104,7 +142,7 @@ public class RESTSession {
         } else {
             Map<String, List<String>> errorData = gson.fromJson(entity, new GenericType<Map<String, List<String>>>() {
             }.getType());
-            throw new RESTException(status, errorData);
+            throw new ServiceException(status, errorData);
         }
     }
 
@@ -134,21 +172,7 @@ public class RESTSession {
         if (status != Response.Status.OK.getStatusCode() && status != Response.Status.NO_CONTENT.getStatusCode()) {
             Map<String, List<String>> errorData = gson.fromJson(entity, new GenericType<Map<String, List<String>>>() {
             }.getType());
-            throw new RESTException(status, errorData);
-        }
-    }
-
-    // TODO: Não deveria ser necessário
-    public <T, R> R deleteItem(Class<T> c, Class<R> r, String path) {
-        Response response = target.path(path).request(MediaType.APPLICATION_JSON).delete();
-        int status = response.getStatus();
-        String entity = response.readEntity(String.class);
-
-        if (status != Response.Status.OK.getStatusCode() && status != Response.Status.NO_CONTENT.getStatusCode()) {
-            Map<String, List<String>> errorData = gson.fromJson(entity, new GenericType<Map<String, List<String>>>() {}.getType());
-            throw new RESTException(response.getStatus(), errorData);
-        } else {
-            return gson.fromJson(entity, r);
+            throw new ServiceException(status, errorData);
         }
     }
 }

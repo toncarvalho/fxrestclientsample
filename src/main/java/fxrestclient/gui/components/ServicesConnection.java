@@ -1,4 +1,4 @@
-package fxrestclient.components;
+package fxrestclient.gui.components;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -8,12 +8,12 @@ import com.google.gson.GsonBuilder;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.HttpUrlConnectorProvider;
 
-public class RESTConnection {
+public class ServicesConnection {
     private final String url;
     private final WebTarget target;
     private final Gson gson;
 
-    public RESTConnection(String url) {
+    public ServicesConnection(String url) {
         this.url = url;
 
         ClientConfig clientConfig = new ClientConfig();
@@ -25,7 +25,7 @@ public class RESTConnection {
         this.gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ").create();
     }
 
-    public RESTSession connect() {
-        return new RESTSession(target, gson);
+    public Session connect() {
+        return new Session(target, gson);
     }
 }
